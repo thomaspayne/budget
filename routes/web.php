@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/expenses', 'ExpenseController@index');
+Route::get('/expense/{expense}', 'ExpenseController@show');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+

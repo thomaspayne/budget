@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Expense
+use App\Expense;
 
 class ExpenseController extends Controller
 {
     public function index() {
-        $expenses = App\Expense::all();
-        return $expenses
+        $expenses = Expense::all();
+        //dd($expenses);
+        return view('expenses.index', compact('expenses'));
     }
+
+    public function show(Expense $expense) {
+        return view('expenses.show', compact('expense'));
+    }
+
 }
